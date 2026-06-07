@@ -67,6 +67,41 @@ One thing that stands out about this professor is that she looks after all of he
 
 ---
 
+## Retrieval Test Results
+
+**Query 1: "Is Professor Chen's class easy?"**
+
+Top returned chunks:
+- Chunk 1 [chen_yuwen_reviews.txt]: "There are horrible professors and then there is Chen. She is by far the worst professor I've ever had. She teaches on powerpoints which is boring and dull. After the midterm is where it gets tough."
+- Chunk 2 [chen_yuwen_reviews.txt]: "...if you hand in the work on time but she's lenient so you can hand in stuff 2 days after due day too. Tags: Clear grading criteria, Gives good feedback, Respected"
+- Chunk 3 [chen_yuwen_reviews.txt]: "...she always provides extra credit labs at the end of the semester if you were slacking. Very easy classes with Chen. Tags: Extra Credit, Group projects, Lecture heavy"
+
+Why these chunks are relevant: All three chunks come from chen_yuwen_reviews.txt and directly address the difficulty of her class. The system correctly surfaced both positive reviews ("very easy classes") and negative ones ("after the midterm is where it gets tough"), giving the LLM enough context to produce a balanced answer.
+
+---
+
+**Query 2: "Does Professor Raginskiy give midterms or finals?"**
+
+Top returned chunks:
+- Chunk 1 [raginskiy_oleg_reviews.txt]: "...no midterm, no final, he explained very well. Take him. Tags: Respected, Amazing lectures, Caring"
+- Chunk 2 [raginskiy_oleg_reviews.txt]: "End of semester he does one on one meeting in front of class to ask questions from paper. Tags: Lots of homework, Hilarious, So many papers"
+- Chunk 3 [chen_yuwen_reviews.txt]: "There are horrible professors and then there is Chen..." (off-topic)
+
+Why these chunks are relevant: Chunk 1 directly answers the question — "no midterm, no final." Chunk 2 adds context about the end-of-semester interview format. Chunk 3 is off-target (wrong professor), but the LLM correctly ignored it and answered from the relevant Raginskiy chunks.
+
+---
+
+**Query 3: "Is Professor Satyanarayana good for learning databases?"**
+
+Top returned chunks:
+- Chunk 1 [satyanarayana_ashwin_reviews.txt]: "...Tags: Participation matters, Amazing lectures, Gives good feedback — Course: CST4714 | Quality: 5.0 | Difficulty: 4.0 | Grade: A | Date: Jul 2020 — I took Professor Ashwin for Database..."
+- Chunk 2 [satyanarayana_ashwin_reviews.txt]: "...want to pursue my education further in Database Management. Tags: Gives good feedback, Respected, Amazing lectures"
+- Chunk 3 [filatova_elena_reviews.txt]: "Tests are open-book, but still hard if you don't listen..." (partially off-topic)
+
+Why these chunks are relevant: Chunks 1 and 2 both come from Satyanarayana's file and specifically mention his Database Admin course (CST4714), directly answering the question. The LLM used these to correctly confirm he is well-regarded for database instruction.
+
+---
+
 ## Grounded Generation
 
 **System prompt grounding instruction:**
@@ -88,13 +123,79 @@ The phrase "based ONLY on the student reviews provided below" combined with "Do 
 
 ---
 
+## Example Responses
+
+**Example 1 — Grounded response with source attribution:**
+
+Query: "Is Professor Chen's class easy?"
+
+System response:
+> Professor Chen's class can be considered easy by some students. According to a review from [Source: chen_yuwen_reviews.txt] with a Course of CST3520, Quality of 5.0, and Difficulty of 1.0, the student states that Professor Chen is an "Easy going professor" and that the class is easy, with exams being open notebook and allowing the use of PowerPoint slides. Additionally, another review from [Source: chen_yuwen_reviews.txt] with a Course of CST3520, Quality of 5.0, and Difficulty of 2.0, mentions that Professor Chen's classes are "Very easy" if you put in the effort. However, it's worth noting that not all reviews agree on the ease of the class, with one review having a Difficulty rating of 5.0.
+
+Sources shown in UI: • chen_yuwen_reviews.txt
+
+---
+
+**Example 2 — Grounded response with source attribution:**
+
+Query: "Does Professor Raginskiy give midterms or finals?"
+
+System response:
+> Professor Raginskiy does not give midterms or finals, according to the reviews from [Source: raginskiy_oleg_reviews.txt]. The specific quotes are: "no midterm, no final, he explained very well" and "Take him, EASY A!!! ... no midterm, no final." At the end of the semester, he conducts a one-on-one meeting where he asks questions from previous homework.
+
+Sources shown in UI: • raginskiy_oleg_reviews.txt • chen_yuwen_reviews.txt • filatova_elena_reviews.txt
+
+---
+
+**Example 3 — Out-of-scope refusal:**
+
+Query: "What is the best restaurant near City Tech?"
+
+System response:
+> I don't have enough information on that.
+
+Sources shown in UI: • satyanarayana_ashwin_reviews.txt • raginskiy_oleg_reviews.txt • filatova_elena_reviews.txt
+
+This confirms grounding is working — the system correctly refused to answer a question outside the scope of professor reviews rather than hallucinating an answer.
+
+---
+
+## Query Interface
+
+**Interface description:**
+
+The system uses a Gradio Blocks web UI accessible at `http://127.0.0.1:7861` when running `app.py`. It has three components:
+
+- **Input — "Your Question" textbox:** A single-line text field where the user types their question about a CST professor. The user can either click the orange "Ask" button or press Enter to submit.
+- **Output — "Answer" textbox:** A multi-line text area (8 lines) displaying the LLM's grounded response, including inline source citations.
+- **Output — "Sources" textbox:** A smaller text area listing the source filenames that were retrieved and used to generate the answer, one per line with a bullet point.
+
+**Sample interaction transcript:**
+User input: Is Professor Satyanarayana good for learning databases?
+Answer output:
+Yes, Professor Satyanarayana (also known as Professor Ashwin) is good for
+learning databases. This information comes from multiple sources, including
+reviews for his CST4714 and CST1204 courses, where students praised his
+ability to clearly explain database concepts and provide valuable learning
+experiences. Specifically, one review stated: "He is very knowledgeable in
+this area. He reiterates the concepts so it is crystal clear. I have learned
+a lot from his lectures and he made me want to pursue my education further
+in Database Management." (Source: satyanarayana_ashwin_reviews.txt)
+Sources output:
+
+satyanarayana_ashwin_reviews.txt
+filatova_elena_reviews.txt
+
+
+---
+
 ## Evaluation Report
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
 | 1 | Is Professor Chen's class easy? | Most reviews say yes — open notebook exams, lenient — but some older reviews say tough grader | Correctly identified mixed reviews; cited open notebook exams and one review with difficulty 5.0 | Relevant | Accurate |
 | 2 | Does Professor Raginskiy give midterms or finals? | No — weekly online tests and homework only | Correctly stated no midterms or finals; cited two specific reviews from raginskiy_oleg_reviews.txt | Relevant | Accurate |
-| 3 | Is Professor Satyanarayana good for learning databases? | Yes — praised for CST4714, clear explanations, real-world examples | Yes, cited CST4714 and CST1204 reviews praising his database knowledge; sourced from satyanarayana_ashwin_reviews.txt | Relevant | Accurate |
+| 3 | Is Professor Satyanarayana good for learning databases? | Yes — praised for CST4714, clear explanations, real-world examples | Yes, cited CST4714 and CST1204 reviews praising his database knowledge | Relevant | Accurate |
 | 4 | What is Professor Cunningham's teaching style? | Gaming-focused, fun, Python group projects, helpful | Returned "I don't have enough information on that" despite retrieving Cunningham chunks | Partially relevant | Inaccurate |
 | 5 | What is the best restaurant near City Tech? | System should refuse — out of scope | Correctly returned "I don't have enough information on that" | Off-target | Accurate |
 
