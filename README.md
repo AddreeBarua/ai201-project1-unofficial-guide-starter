@@ -2,6 +2,8 @@
 
 ---
 
+**Demo Video:** [Watch here](-video-link)
+
 ## Domain
 
 This system covers student reviews of Computer Information Systems (CST) professors at New York City College of Technology (City Tech). This knowledge is valuable because official channels like the course catalog and department website only list professor names and course descriptions — they don't tell you how a professor actually teaches, how hard their exams are, or whether attendance is mandatory. Students rely on word of mouth and sites like Rate My Professors to make informed registration decisions, but that information is scattered across hundreds of individual review pages and not easily searchable. This system makes that informal student knowledge searchable and answerable in plain language.
