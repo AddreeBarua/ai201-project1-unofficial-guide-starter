@@ -1,0 +1,84 @@
+Professor: Elena Filatova
+Department: Computer Information Systems
+School: New York City College of Technology
+Overall Rating: 3.9/5 | Would Take Again: 65% | Difficulty: 3.3
+
+---
+Course: CST3504 | Quality: 1.0 | Difficulty: 5.0 | Grade: C | Date: Jan 2026
+Attendance must. Lots of homework and group projects.
+Tags: Group projects, Clear grading criteria, Lots of homework
+
+---
+Course: CST3504 | Quality: 1.0 | Difficulty: 5.0 | Grade: C | Date: Jan 2026
+Good but attendance is mandatory. Tough grader, beware of pop quizzes and many papers.
+Tags: Tough grader, Beware of pop quizzes, So many papers
+
+---
+Course: CST3504 | Quality: 2.0 | Difficulty: 4.0 | Grade: C | Date: Dec 2025
+Good at explanation and nice. Respectful but a tough grader with lots of homework.
+Tags: Tough grader, Clear grading criteria, Lots of homework
+
+---
+Course: CST3504 | Quality: 4.0 | Difficulty: 3.0 | Grade: Not sure | Date: Dec 2024
+The material itself is a little bit difficult but she's a very nice and caring professor. She gives plenty of quizzes and homework to make sure we understand the material but you also need to study and practice.
+Tags: Caring, Test heavy
+
+---
+Course: CST3512 | Quality: 4.0 | Difficulty: 5.0 | Grade: B- | Date: Dec 2024
+Brilliant and caring but strict with grading. The professor assigns difficult homework requiring extra time and doesn't accept late submissions. I spent 15 hours on a tough assignment, but missing the deadline meant it wasn't counted, wasting my effort. Also, frequent quizzes and unclear prep materials, need better communication.
+Tags: Tough grader, Lecture heavy, Test heavy
+
+---
+Course: CST4812 | Quality: 5.0 | Difficulty: 3.0 | Grade: A | Date: Jan 2023
+She is passionate about the material, invested in her students, and always willing to help with any questions you might have. This course wasn't easy, but it's an upper-level course. It shouldn't be. She is very fair and wants you to succeed. Take good notes, complete assignments on time, ask for help when you need it, and you'll be just fine.
+Tags: Tough grader, Gives good feedback, Caring
+
+---
+Course: CST3512 | Quality: 5.0 | Difficulty: 3.0 | Grade: A | Date: Dec 2021
+One thing that stands out about this professor is that she looks after all of her students, whether it's feedback on submitted work or looking for internships and jobs. She takes her classes nice and slow, invites participation, and dynamically adjusts the course to suit the students' needs. Tests are open-book, but still hard if you don't listen.
+Tags: Gives good feedback, Accessible outside class, Caring
+
+---
+Course: CST3504 | Quality: 3.0 | Difficulty: 3.0 | Grade: D | Date: Jun 2020
+She isn't a horrible professor, but she was way too strict on grading, and if you are not good at database try to take a different professor. She does a lot of review, and you must study and practice in order to pass. You work in different teams to do ERD/SQL projects. Ask her for help, and you should pass.
+Tags: Graded by few things, Beware of pop quizzes, Tough grader
+
+---
+Course: CST3504 | Quality: 5.0 | Difficulty: 3.0 | Grade: A+ | Date: May 2020
+She's one of the best prof I had in City Tech. She cares about her students. There's a lot of work in the class however if you follow her and do what she says you'll do good. You'll have a better understanding about database after this class. MUST TAKE HER.
+Tags: Respected, Participation matters, Amazing lectures
+
+---
+Course: CST3504 | Quality: 4.0 | Difficulty: 3.0 | Grade: A- | Date: Aug 2019
+She is a bit confusing on explaining certain things but she will help you out. Her exams consist of multiple-choice part 1 and part 2 will be solving ERD problems. She gives quizzes on SQL and a review before the SQL quiz. There is a group project which consists of creating SQL and ERD diagrams.
+Tags: Group projects, Clear grading criteria, Lecture heavy
+
+---
+Course: CST3504 | Quality: 5.0 | Difficulty: 3.0 | Grade: A | Date: Jul 2019
+She is great. Patient, she cares about students and wants them to learn. I was very happy with her and I would definitely take her classes again.
+Tags: Gives good feedback, Respected, Accessible outside class
+
+---
+Course: CST1101 | Quality: 4.0 | Difficulty: 3.0 | Date: May 2017
+You have to do lots of assignments in this class. Also she is not good at explaining but she gives you extra credit if you don't do well on the exams. Be ready for unannounced quizzes.
+Tags: Lots of homework
+
+---
+Course: CST1100 | Quality: 5.0 | Difficulty: 3.0 | Date: Mar 2017
+She is great. Very helpful and she cares deeply about the well-being of the students.
+Tags: Clear grading criteria, Caring
+
+---
+Course: CST1100 | Quality: 5.0 | Difficulty: 3.0 | Grade: A | Date: Oct 2016
+She's very passionate about Computer Systems and a very good professor.
+Tags: Gives good feedback, Clear grading criteria, Caring
+
+---
+Course: CST1101 | Quality: 5.0 | Difficulty: 2.0 | Date: May 2016
+She is really awesome. You just have to go over the materials learned in class. She is helpful, and she gives extra credit to help students better their final grade. Her exams are clear. She also uploads every chapter of the textbook on Blackboard so you wouldn't have to buy the book.
+Tags: Helpful
+
+---
+Course: CST101 | Quality: 5.0 | Difficulty: 1.0 | Grade: A+ | Date: Dec 2015
+Very good and not lying about it.
+Tags: Helpful
