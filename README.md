@@ -2,7 +2,7 @@
 
 ---
 
-**Demo Video:** [Watch here](-video-link)
+**Demo Video:** [Watch here](https://www.loom.com/share/a1f2c138c81e4f7d93c920136de748c7)
 
 ## Domain
 
